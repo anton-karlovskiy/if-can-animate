@@ -1,9 +1,4 @@
 
-/* ray test touch < */
-* {
-  box-sizing: border-box;
-}
-
 html,
 body,
 #root {
@@ -18,4 +13,3 @@ body,
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
-/* ray test touch > */

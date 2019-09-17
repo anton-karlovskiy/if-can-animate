@@ -1,5 +1,4 @@
 
-/* ray test touch < */
 .cell {
   position: relative;
   background-size: cover;
@@ -115,14 +114,6 @@
   flex-direction: column;
 }
 
-.header {
-  padding: 30px 70px 30px 70px;
-  height: auto;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
 .grid {
   flex: 1;
 }
@@ -131,4 +122,3 @@
   background-color: #ca6a9a !important;
   border-color: #ca6a9a !important;
 }
-/* ray test touch > */

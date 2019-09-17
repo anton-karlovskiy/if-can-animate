@@ -1,4 +1,4 @@
-// ray test touch <
+
 // Gradients taken from: https://webgradients.com/
 const listData = [
   {
@@ -88,4 +88,3 @@ const listData = [
 ];
 
 export default listData;
-// ray test touch >

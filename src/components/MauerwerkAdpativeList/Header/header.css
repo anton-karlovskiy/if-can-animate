@@ -1,0 +1,8 @@
+
+.header {
+  padding: 30px 70px 30px 70px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}

@@ -1,5 +1,4 @@
 
-// ray test touch <
 import React from 'react';
 
 import MauerwerkAdpativeList from './components/MauerwerkAdpativeList';
@@ -11,7 +10,6 @@ const App = () => {
       <MauerwerkAdpativeList />
     </div>
   );
-}
+};
 
 export default App;
-// ray test touch >
