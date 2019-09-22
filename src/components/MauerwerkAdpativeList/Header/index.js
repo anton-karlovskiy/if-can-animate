@@ -111,7 +111,7 @@ const Header = ({
             </Button>
           </Dropdown>
         </Col>
-        <Col className='control' lg={4}>
+        <Col className='control' md={12} lg={4}>
           <span>Cell height</span>
           <Switch style={{marginLeft: 15}} defaultChecked onChange={setHeight} />
         </Col>
