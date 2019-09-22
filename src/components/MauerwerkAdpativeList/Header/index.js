@@ -1,9 +1,20 @@
 
 import React, { Fragment } from 'react';
-import { Button, Icon, Input, Dropdown, Menu, Switch, Typography, Row, Col } from 'antd';
+import {
+  Button,
+  Icon,
+  Input,
+  Dropdown,
+  Menu,
+  Typography,
+  Row,
+  Col,
+  Checkbox
+} from 'antd';
 
 import { useMemoryStatus } from '../../../utils/hooks';
 import './header.css';
+import SwitchWithLabel from '../../SwitchWithLabel';
 
 const MemoryStatus = () => {
   const memoryStatus = useMemoryStatus();
@@ -58,6 +69,9 @@ const MemoryStatus = () => {
 };
 
 const Header = ({
+  manualAnimationTest,
+  setManualAnimationTest,
+  switchAnimation,
   shuffle,
   search,
   setColumns,
@@ -112,10 +126,17 @@ const Header = ({
           </Dropdown>
         </Col>
         <Col className='control' md={12} lg={4}>
-          <span>Cell height</span>
-          <Switch style={{marginLeft: 15}} defaultChecked onChange={setHeight} />
+          <SwitchWithLabel label='Cell Height' defaultChecked onChange={setHeight} />
         </Col>
       </Row>
+      <div className='animation-setting'>
+        <div className='animaton-setting-option'>
+          <Checkbox onChange={setManualAnimationTest}>Manual Animation Test</Checkbox>
+        </div>
+        <div className='animaton-setting-option'>
+          <SwitchWithLabel label='Animations on/off' disabled={!manualAnimationTest} defaultChecked onChange={switchAnimation} />
+        </div>
+      </div>
       <MemoryStatus />
     </div>
   )

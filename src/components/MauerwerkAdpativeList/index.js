@@ -15,12 +15,21 @@ const MauerwerkAdpativeList = () => {
   const [margin, setMargin] = useState(70);
   const [filter, setFilter] = useState('');
   const [height, setHeight] = useState(true);
+  const [manualAnimationTest, setManualAnimationTest] = useState(false);
+  const [animation, setAnimation] = useState(true);
 
   const searchHandler = event => setFilter(event.target.value);
   const shuffleHandler = () => setListData(lodash.shuffle(listData));
   const changeColumnsHandler = event => setColumns(parseInt(event.key));
   const changeMarginHandler = event => setMargin(parseInt(event.key));
   const changeHeightHandler = event => setHeight(event);
+  const setManualAnimationTestHandler = event => {
+    setManualAnimationTest(event.target.checked);
+  };
+
+  const switchAnimationHandler = checked => {
+    setAnimation(checked);
+  };
 
   const filteredListData = listData.filter(
     listItem => listItem.name.toLowerCase().includes(filter)
@@ -29,6 +38,9 @@ const MauerwerkAdpativeList = () => {
   return (
     <div className='main'>
       <Header
+        manualAnimationTest={manualAnimationTest}
+        setManualAnimationTest={setManualAnimationTestHandler}
+        switchAnimation={switchAnimationHandler}
         columns={columns}
         margin={margin}
         search={searchHandler}
@@ -53,7 +65,12 @@ const MauerwerkAdpativeList = () => {
         // Delay when active elements (blown up) are minimized again
         closeDelay={400}>
         { (data, maximized, toggle) => (
-          <Cell {...data} maximized={maximized} toggle={toggle} />
+          <Cell
+            manualAnimationTest={manualAnimationTest}
+            animation={animation}
+            {...data}
+            maximized={maximized}
+            toggle={toggle} />
         ) }
       </Grid>
     </div>
