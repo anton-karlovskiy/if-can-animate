@@ -13,8 +13,6 @@ const Cell = ({ ...rest }) => {
   const memoryStatus = useMemoryStatus();
   if (!memoryStatus) return <Loading />;
 
-  console.log('[Cell] memoryStatus => ', memoryStatus);
-
   const { overLoaded } = memoryStatus;
 
   const adaptiveCell = overLoaded ? (

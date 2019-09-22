@@ -69,7 +69,7 @@ const useMemoryStatus = () => {
         overLoaded
       });
     } else {
-      setMemoryStatus({ unsupportMessage });
+      setMemoryStatus({unsupportMessage});
     }
     // eslint-disable-next-line
   }, []);

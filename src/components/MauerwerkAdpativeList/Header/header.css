@@ -1,8 +1,19 @@
 
 .header {
-  padding: 30px 70px 30px 70px;
+  padding: 20px 20px;
   height: auto;
+}
+
+.control {
+  padding: 8px 0;
   display: flex;
   align-items: center;
-  overflow: hidden;
+}
+
+.status {
+  padding: 8px 0;
+}
+
+.status > p {
+  margin: 0
 }

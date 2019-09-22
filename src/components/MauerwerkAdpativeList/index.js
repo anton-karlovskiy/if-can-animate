@@ -27,7 +27,7 @@ const MauerwerkAdpativeList = () => {
   );
 
   return (
-    <div className="main">
+    <div className='main'>
       <Header
         columns={columns}
         margin={margin}
@@ -37,7 +37,7 @@ const MauerwerkAdpativeList = () => {
         setMargin={changeMarginHandler}
         setHeight={changeHeightHandler} />
       <Grid
-        className="grid"
+        className='grid'
         // Arbitrary data, should contain keys, possibly heights, etc.
         data={filteredListData}
         // Key accessor, instructs grid on how to fet individual keys from the data set
