@@ -15,6 +15,17 @@ const MauerwerkAdpativeList = () => {
   const [margin, setMargin] = useState(70);
   const [filter, setFilter] = useState('');
   const [height, setHeight] = useState(true);
+  const [manualAnimationTest, checkManualAnimationTest] = useState(false);
+
+  const checkManualAnimationTestHandler = flag => {
+    checkManualAnimationTest(flag);
+  };
+
+  const [animation, setAnimation] = useState(true);
+
+  const toggleManualAnimationTestHandler = checked => {
+    setAnimation(checked);
+  };
 
   const searchHandler = event => setFilter(event.target.value);
   const shuffleHandler = () => setListData(lodash.shuffle(listData));
@@ -29,6 +40,9 @@ const MauerwerkAdpativeList = () => {
   return (
     <div className="main">
       <Header
+        manualAnimationTest={manualAnimationTest}
+        checkManualAnimationTest={checkManualAnimationTestHandler}
+        toggleManualAnimationTest={toggleManualAnimationTestHandler}
         columns={columns}
         margin={margin}
         search={searchHandler}
@@ -53,7 +67,12 @@ const MauerwerkAdpativeList = () => {
         // Delay when active elements (blown up) are minimized again
         closeDelay={400}>
         { (data, maximized, toggle) => (
-          <Cell {...data} maximized={maximized} toggle={toggle} />
+          <Cell 
+            manualAnimationTest={manualAnimationTest}
+            animation={animation}
+            {...data} 
+            maximized={maximized} 
+            toggle={toggle} />
         ) }
       </Grid>
     </div>

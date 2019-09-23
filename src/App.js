@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 import MauerwerkAdpativeList from './components/MauerwerkAdpativeList';

@@ -9,18 +9,23 @@ const LazySimpleCell = lazy(() => import(/* webpackChunkName: "simple-cell" */ '
 const LazyAnimationCell = lazy(() => import(/* webpackChunkName: "animation-cell" */ './AnimationCell'));
 const Loading = () => <Fragment>Loading...</Fragment>;
 
-const Cell = ({ ...rest }) => {
+const Cell = ({ manualAnimationTest, animation, ...rest }) => {
   const memoryStatus = useMemoryStatus();
   if (!memoryStatus) return <Loading />;
 
-  console.log('[Cell] memoryStatus => ', memoryStatus);
-
   const { overLoaded } = memoryStatus;
+  let isAnimationCell = true;
+  // memory hook override
+  if (manualAnimationTest) {
+    isAnimationCell = animation;
+  } else {
+    isAnimationCell = !overLoaded;
+  }
 
-  const adaptiveCell = overLoaded ? (
-    <LazySimpleCell {...rest} />
-  ) : (
+  const adaptiveCell = isAnimationCell ? (
     <LazyAnimationCell {...rest} />
+  ) : (
+    <LazySimpleCell {...rest} />
   );
 
   return (
